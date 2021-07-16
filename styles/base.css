@@ -1,0 +1,19 @@
+html {
+  font-size: 2.6666666667vw;
+}
+
+body {
+  background-color: var(--light-green);
+  color: var(--dark-green);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 0.7874015748vw;
+  }
+}

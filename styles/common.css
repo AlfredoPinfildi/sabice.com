@@ -1,0 +1,23 @@
+main {
+  min-height: 100vh;
+  margin: 0 var(--horizontal-padding);
+}
+
+.columns {
+  margin: 0 var(--horizontal-padding);
+  width: calc(100vw - (2 * var(--horizontal-padding)));
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    var(--yellow),
+    var(--yellow) var(--column),
+    transparent var(--column),
+    transparent var(--full-column)
+  );
+  opacity: 0.15;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+}

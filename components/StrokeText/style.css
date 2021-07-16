@@ -1,0 +1,14 @@
+.stroke-text {
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--dark-green),
+    var(--dark-green)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--dark-green);
+}

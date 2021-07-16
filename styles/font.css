@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Zermatt First";
+  src: url("/assets/font/Zermatt-First.woff2") format("woff2"),
+    url("/assets/font/Zermatt-First.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zermatt Second";
+  src: url("/assets/font/Zermatt-Second.woff2") format("woff2"),
+    url("/assets/font/Zermatt-Second.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Grotesk Book 20";
+  src: url("/assets/font/SharpGroteskBook20-Regular.woff2") format("woff2"),
+    url("/assets/font/SharpGroteskBook20-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Grotesk Light 20";
+  src: url("/assets/font/SharpGroteskLight20-Regular.woff2") format("woff2"),
+    url("/assets/font/SharpGroteskLight20-Regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

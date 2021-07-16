@@ -1,0 +1,26 @@
+:root {
+  --column: 6.8rem;
+  --gutter: 2.4rem;
+  --horizontal-padding: calc(
+    (100vw - (4 * var(--column)) - (3 * var(--gutter))) / 2
+  );
+  --full-column: calc(var(--column) + var(--gutter));
+
+  --light-green: #ebefe8;
+  --dark-green: #343a2e;
+  --yellow: #f6d346;
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --column: 8rem;
+    --gutter: 1.6rem;
+    --horizontal-padding: calc(
+      (100vw - (12 * var(--column)) - (11 * var(--gutter))) / 2
+    );
+  }
+
+  html {
+    font-size: 0.7874015748vw;
+  }
+}
