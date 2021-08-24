@@ -1,0 +1,54 @@
+.mouse-pointer {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+  pointer-events: none;
+  overflow: visible;
+  mix-blend-mode: difference;
+  transform-origin: center;
+  background-image: url(/assets/icons/puntatore.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+.mouse-pointer--hover {
+  background-image: url(/assets/icons/rollover.svg);
+}
+
+.mouse-pointer--scroll-down {
+  background-image: url(/assets/icons/scroll_down.svg);
+}
+
+.mouse-pointer--click {
+  background-image: url(/assets/icons/click.svg);
+}
+
+.mouse-pointer--loading {
+  background-image: url(/assets/icons/loading.svg);
+}
+
+.mouse-pointer--click-hold {
+  background-image: url(/assets/icons/click_hold.svg);
+}
+
+.mouse-pointer--play {
+  background-image: url(/assets/icons/play.svg);
+}
+
+.mouse-pointer.mouse-pointer--reset {
+  background-image: url(/assets/icons/puntatore.svg) !important;
+}
+
+@media (min-width: 1025px) {
+  .mouse-pointer {
+    display: block;
+  }
+
+  .mouse-pointer--tablet {
+    display: none !important;
+  }
+}

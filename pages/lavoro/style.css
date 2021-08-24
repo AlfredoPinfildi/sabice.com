@@ -1,0 +1,447 @@
+.project__content {
+  padding: 9.6rem 0 4rem;
+}
+
+.project section {
+  padding: 0 var(--horizontal-padding);
+  box-sizing: content-box;
+}
+
+.project
+  section:not(.project__hero):not(.project__text)
+  + section:not(.project__text) {
+  margin-top: var(--gutter);
+}
+
+.project
+  section:not(.project__hero):not(.project__text):not(.project__intro)
+  + section:not(.project__text)
+  + section:not(.project__image--margin-high):not(.project__text) {
+  margin-top: 1.6rem;
+}
+
+.project__intro {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.project__tags {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4rem;
+  align-self: flex-end;
+}
+
+.project__tags .tags__tag {
+  margin: 0;
+}
+
+.project__tags .tags__tag + .tags__tag {
+  margin-left: 0.8rem;
+}
+
+section.project__hero {
+  padding: 0 var(--horizontal-padding);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 4.8rem;
+  margin-top: 3.2rem;
+}
+
+section.project__hero.project__hero--centered {
+  align-items: center;
+}
+
+section.project__hero.project__hero--centered .animated-text {
+  width: 100%;
+  text-align: center;
+}
+
+.project__cover {
+  align-self: flex-end;
+  margin-top: -24px;
+}
+
+.cursor-type--play::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/icons/play.svg");
+  background-position: center;
+  background-size: 64px;
+  background-repeat: no-repeat;
+}
+
+.project__cover .clipped-image__image,
+.clipped-image__image--video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-number {
+  position: absolute;
+  font-size: 12px;
+  font-family: var(--font-body);
+  display: none;
+}
+
+.image-number--top-right {
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+}
+
+.image-number--top-left {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+}
+
+.image-number--right-top {
+  top: 0;
+  left: 100%;
+  margin-left: var(--gutter);
+}
+
+.image-number--left-top {
+  top: 0;
+  right: 100%;
+  margin-right: var(--gutter);
+}
+
+.image-number--left-bottom {
+  bottom: 0;
+  right: 100%;
+  margin-right: var(--gutter);
+}
+
+.image-number--right-bottom {
+  bottom: 0%;
+  left: 100%;
+  margin-left: var(--gutter);
+}
+
+.image-number--bottom-left {
+  top: 100%;
+  left: 0;
+  margin-top: var(--gutter);
+}
+
+.project__image + p {
+  margin: 1.6rem 0;
+}
+
+p.project__description {
+  margin-top: 48px;
+  margin-bottom: 0;
+}
+
+.project__description .p1 + div .p3 {
+  margin-top: 1.6rem;
+}
+
+.project__subdescription {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--gutter);
+}
+
+.project section .p1 + .p3 {
+  margin-top: 32px;
+}
+
+.project section .p1:not(.project__description) + div .p3:first-child {
+  margin-top: 32px;
+}
+
+.project section .p1:not(.project__description) + div .p3 + .p3 {
+  margin-top: 1.6rem;
+}
+
+.project__image {
+  position: relative;
+}
+
+.project__image + .project__image,
+section .p3 + .project__image {
+  margin-top: 1.6rem;
+}
+
+.project--solid .project__image .clipped-image__image::before {
+  content: "solid ©";
+  font-family: var(--font-body);
+  font-size: 8px;
+  line-height: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform-origin: top right;
+  transform: rotate(-90deg) translate(0%, -100%);
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.project--onlab .project__image .clipped-image__image::before {
+  content: "onlab ©";
+  font-family: var(--font-body);
+  font-size: 8px;
+  line-height: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform-origin: top right;
+  transform: rotate(-90deg) translate(0%, -100%);
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.project__image .image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.project__image__measurer {
+  height: 0;
+  padding-bottom: 56%;
+}
+
+.project__image--super-smaller .project__image__measurer {
+  padding-bottom: 27%;
+}
+
+.project__image--smaller .project__image__measurer {
+  padding-bottom: 32%;
+}
+
+.project__image--iper-small .project__image__measurer {
+  padding-bottom: 38%;
+}
+
+.project__image--super-small .project__image__measurer {
+  padding-bottom: 43%;
+}
+
+.project__image--small .project__image__measurer {
+  padding-bottom: 47%;
+}
+
+.project__image--half .project__image__measurer {
+  padding-bottom: 50%;
+}
+
+.project__image--high .project__image__measurer {
+  padding-bottom: 66%;
+}
+
+.project__image--more-high .project__image__measurer {
+  padding-bottom: 73%;
+}
+
+.project__image--most-high .project__image__measurer {
+  padding-bottom: 77%;
+}
+
+.project__image--super-more-high .project__image__measurer {
+  padding-bottom: 83%;
+}
+
+.project__image--higher .project__image__measurer {
+  padding-bottom: 89%;
+}
+
+.project__image--rect .project__image__measurer {
+  padding-bottom: 100%;
+}
+
+.project__image--highest .project__image__measurer {
+  padding-bottom: 108%;
+}
+
+.project__image--super-high .project__image__measurer {
+  padding-bottom: 117%;
+}
+
+.project__image--super-higher .project__image__measurer {
+  padding-bottom: 128%;
+}
+
+.project__image--super-highest .project__image__measurer {
+  padding-bottom: 141%;
+}
+
+.project__image--iper-high .project__image__measurer {
+  padding-bottom: 168%;
+}
+
+.project__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project__image.project__image--contain img {
+  object-fit: contain;
+}
+
+.project__image.project__image--top img {
+  object-position: top;
+}
+
+.project__image.project__image--border img {
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+img.project__image__decorator {
+  width: 25rem;
+  position: absolute;
+  transform: translateY(-50%);
+  object-fit: contain;
+}
+
+.project__text {
+  margin: 3.2rem 0;
+}
+
+@media (min-width: 768px) {
+  .project__content {
+    padding: 5.6rem 0 4rem;
+  }
+
+  .project__tags {
+    margin-bottom: 2rem;
+  }
+
+  .project__cover {
+    margin-top: -3rem;
+  }
+
+  section.project__hero {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .project {
+    height: calc(var(--dvh, 1vh) * 100);
+  }
+
+  .project__content {
+    padding: 13.2rem 0 6.4rem;
+  }
+
+  .project
+    section:not(.project__hero):not(.project__text)
+    + section:not(.project__text) {
+    margin-top: var(--gutter);
+  }
+
+  .project__image + .project__image,
+  section .p3 + .project__image {
+    margin-top: 0;
+  }
+
+  .project__image + p {
+    margin: 0;
+  }
+
+  .project__image--margin-top {
+    margin-top: 29.5rem;
+  }
+
+  .project__image--margin-bottom {
+    margin-bottom: 16rem;
+  }
+
+  .project__intro {
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: calc((10 * var(--column)) + (9 * var(--gutter)));
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .project__intro--no-margin {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .project__hero {
+    margin-bottom: 6.4rem;
+    overflow: hidden;
+  }
+
+  .project__hero h1 {
+    font-size: 15rem;
+    line-height: 15rem;
+    flex-shrink: 0;
+  }
+
+  .project__text {
+    margin: 4.8rem 0;
+  }
+
+  .project__cover {
+    position: absolute;
+    top: 24rem;
+    right: var(--horizontal-padding);
+    margin-top: 0;
+  }
+
+  .project__cover--three {
+    top: 47rem;
+  }
+
+  .project__cover .clipped-image__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  p.project__description {
+    margin-top: 64px;
+  }
+
+  .project__subdescription {
+    margin-top: 56px;
+    width: calc((4 * var(--column)) + (3 * var(--gutter)));
+  }
+
+  .image-number {
+    display: block;
+  }
+
+  .project section .p1 + .p3 {
+    margin-top: 0;
+  }
+
+  .project section .p1 + div .p3:first-child {
+    margin-top: 0;
+  }
+
+  .project section .p1 + div .p3 + .p3 {
+    margin-top: 0;
+  }
+
+  .cursor-type--play::after {
+    display: none;
+  }
+
+  .project__tags {
+    margin-bottom: auto;
+  }
+}

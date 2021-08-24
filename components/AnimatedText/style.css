@@ -1,0 +1,39 @@
+.animated-text {
+  position: relative;
+  white-space: nowrap;
+  display: block;
+}
+
+.animated-text__wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.animated-text.animated-text--unwrapped .animated-text__wrapper {
+  overflow: visible;
+}
+
+.animated-text .animated-text__row {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  will-change: transform;
+  transition: var(--transition-duration-slow) var(--transition-ease--out-quint);
+  transition-property: transform;
+}
+
+.animated-text.animated-text--unwrapped .animated-text__row {
+  transform: translate3d(0, 64px, 0);
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+.animated-text--in-view .animated-text__row,
+.animated-text--in-view.animated-text.animated-text--unwrapped
+  .animated-text__row {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.animated-text--in-view.animated-text--out-top .animated-text__row {
+  transform: translate3d(0, -110%, 0);
+}

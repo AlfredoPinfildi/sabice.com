@@ -1,5 +1,6 @@
 html {
   font-size: 2.6666666667vw;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -7,12 +8,44 @@ body {
   color: var(--dark-green);
 }
 
+html,
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: var(--font-body);
+  color: white;
+  width: 100%;
+  background-color: black;
+  cursor: none;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none !important;
+}
+
+body.fixed {
+  height: 0;
+  overflow: hidden;
+}
+
 @media (min-width: 1025px) {
+  body {
+    height: 100vh;
+  }
+
   html {
     font-size: 0.7874015748vw;
   }

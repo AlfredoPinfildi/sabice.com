@@ -1,0 +1,23 @@
+.scroll-top {
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+  border: 1px solid white;
+  background-image: url("/assets/icons/top-arrow.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  display: block;
+  box-sizing: border-box;
+  padding: 13px 18px;
+}
+
+@media (min-width: 1025px) {
+  .scroll-top {
+    width: 68px;
+    height: 68px;
+    border-radius: 34px;
+    padding: 16px 24px;
+  }
+}

@@ -1,0 +1,9 @@
+.clipped-image__image {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  will-change: clip-path;
+  transition: clip-path 1.6s var(--transition-ease--out-quint);
+}
+
+.clipped-image--visible .clipped-image__image {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

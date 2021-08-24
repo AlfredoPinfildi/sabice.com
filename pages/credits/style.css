@@ -1,0 +1,99 @@
+.credits {
+  height: calc(var(--dvh, 1vh) * 100);
+  position: relative;
+}
+
+.credits::before {
+  content: "";
+  padding: 92px 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/icons/credits--mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-origin: content-box;
+}
+
+@keyframes translate-top {
+  from {
+    -webkit-transform: translateY(calc((var(--dvh, 1vh) * 100) - 92px));
+    transform: translateY(calc((var(--dvh, 1vh) * 100) - 92px));
+  }
+  to {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+.credits__blocks {
+  animation: translate-top 20s linear;
+}
+
+@keyframes slide-top {
+  from {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.credits__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px var(--horizontal-padding) 0;
+  animation: slide-top 20s 20s linear infinite;
+}
+
+.credits__block p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.credits__block p span {
+  text-align: center;
+}
+
+.credits__block p + p {
+  margin-top: 16px;
+}
+
+.credits__block .p3 + .p1 {
+  margin-top: 8px;
+}
+
+.credits__designer-logo {
+  width: 100%;
+  height: 47px;
+  background-image: url("/assets/icons/R+S_circle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 36px;
+}
+
+.credits__illustrator-logo {
+  width: 100%;
+  height: 47px;
+  background-image: url("/assets/icons/illustratore--faccia.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 36px;
+}
+
+@media (min-width: 1025px) {
+  .credits::before {
+    padding: 0 var(--horizontal-padding);
+    background-image: url("/assets/icons/credits.svg");
+  }
+}

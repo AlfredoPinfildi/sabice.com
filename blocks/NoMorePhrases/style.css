@@ -1,0 +1,107 @@
+.no-mo-phrases {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 29px 24px;
+  box-sizing: border-box;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1025px) {
+  .no-mo-phrases {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.no-mo-phrases h2 {
+  font-size: 12rem;
+  line-height: 12rem;
+}
+
+.no-mo-phrases--visible {
+  display: flex;
+}
+
+.no-mo-phrases__header::before {
+  opacity: 0;
+}
+
+.no-mo-phrases__counter {
+  content: attr(data-counter);
+  font-size: 8.4rem;
+  font-family: var(--font-body--second);
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+.no-mo-phrases__counter:first-of-type {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.no-mo-phrases__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.no-mo-phrases__header__logo {
+  width: 100px;
+  height: 47px;
+  mix-blend-mode: difference;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.designer-side .no-mo-phrases__header__logo {
+  background-image: url(/assets/icons/R+S_circle.svg);
+}
+
+.illustrator-side .no-mo-phrases__header__logo {
+  background-image: url(/assets/icons/illustratore--faccia.svg);
+}
+
+.no-mo-phrases__header__logo svg {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.designer-side .no-mo-phrases__header__logo--illustrator {
+  display: none;
+  pointer-events: none;
+}
+
+.illustrator-side svg:not(.no-mo-phrases__header__logo--illustrator) {
+  display: none;
+  pointer-events: none;
+}
+
+.no-mo-phrases__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-mo-phrases__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-shrink: 0;
+  margin-left: var(--gutter);
+}
+
+.no-mo-phrases__info p {
+  text-align: right;
+}

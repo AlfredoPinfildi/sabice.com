@@ -1,0 +1,36 @@
+.image-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-placeholder__image {
+  opacity: 0;
+  margin: 0 !important;
+}
+
+.image-placeholder__placeholder {
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  z-index: 1;
+  margin: 0 !important;
+  background-image: url("/assets/icons/placeholder.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 13.5px;
+}
+
+.image-placeholder--ready .image-placeholder__placeholder {
+  opacity: 0;
+}
+
+.image-placeholder--ready .image-placeholder__image {
+  opacity: 1;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "base-webpack",
+  "name": "sabice.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "dev": "webpack serve --config config/webpack.dev.config.js",
     "build": "webpack --config config/webpack.prod.config.js"
   },
-  "author": "Alfredo Pinfildi & Serena Falchieri",
+  "author": "Alfredo Pinfildi",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -18,11 +18,14 @@
     "core-js": "^3.15.2",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.2",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.0.0",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
+    "stats.js": "^0.17.0",
     "style-loader": "^3.0.0",
     "webpack": "^5.39.1",
     "webpack-cli": "^4.7.2",
@@ -32,6 +35,7 @@
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.1",
-    "html-loader": "^2.1.2"
+    "html-loader": "^2.1.2",
+    "locomotive-scroll": "^4.1.1"
   }
 }

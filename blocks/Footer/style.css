@@ -1,10 +1,33 @@
 footer {
   width: 100%;
-  background-color: var(--dark-green);
+  position: fixed;
+  left: 0;
+  padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 2.4rem var(--horizontal-padding);
   box-sizing: border-box;
-  color: var(--yellow);
+  z-index: 998;
+  mix-blend-mode: difference;
+}
+
+.footer--illustratore,
+.footer--designer {
+  top: 0;
+}
+
+footer .p4:last-child {
+  text-align: right;
+}
+
+@media (min-width: 1025px) {
+  footer {
+    padding: 20px 24px;
+  }
+
+  .footer--illustratore,
+  .footer--designer {
+    top: auto;
+    bottom: 0;
+  }
 }

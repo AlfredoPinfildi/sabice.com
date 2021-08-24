@@ -1,0 +1,312 @@
+.about {
+  padding: 100px var(--horizontal-padding) 29px;
+  box-sizing: border-box;
+}
+
+.about span {
+  display: block;
+}
+
+.about__intro {
+  position: relative;
+  margin-bottom: 53px;
+}
+
+.about__intro__image {
+  width: calc((3 * var(--column)) + (2 * var(--gutter)));
+  max-width: 537px;
+  height: 37.6rem;
+  max-height: 376px;
+  position: absolute;
+  top: 190px;
+  right: 0;
+  z-index: 2;
+}
+
+.about__intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__intro h1 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 36rem;
+  z-index: 1;
+}
+
+.about__intro__bottom {
+  margin-top: 31px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--gutter);
+}
+
+.about__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__section__title {
+  height: min-content;
+  padding-top: 87px;
+  padding-bottom: 20px;
+  background-color: black;
+  border-bottom: 1px solid white;
+  z-index: 1;
+}
+
+.about__section__content {
+  width: calc((3 * var(--column)) + (2 * var(--gutter)));
+  align-self: flex-end;
+  margin-top: 26px;
+}
+
+.about__section__title + .about__section__content {
+  margin-top: 40px;
+}
+
+.about__section--full .about__section__content {
+  width: 100%;
+}
+
+.about__section--bold .about__section__content {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 20px 0;
+}
+
+.about__section--bold .about__section__title + .about__section__content {
+  border: none;
+}
+
+.about__section__content--2 img {
+  max-width: 100%;
+}
+
+.about__section__content > div + div {
+  margin-top: 40px;
+}
+
+.about__section__content__heading {
+  margin-bottom: 24px;
+}
+
+.about__section__content__heading img {
+  width: 100%;
+  height: 22px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.about__section__content__body + .about__section__content__heading,
+.separator + .about__section__content__heading {
+  margin-top: 57px;
+}
+
+.separator + .about__section__content__body,
+.about__section__content__body + .about__section__content__body,
+img + .about__section__content__body {
+  margin-top: 16px;
+}
+
+.about__section__content .p3 + .p3 {
+  margin-top: 57px;
+}
+
+.about__section__content .p1 + .p3 {
+  margin-top: 42px;
+}
+
+.about__section__content.about__section__content--2 .p3 + .p3 {
+  margin-top: 16px !important;
+}
+
+.about__section__content#personal-life .p3 + .p3 {
+  margin-top: 16px;
+}
+
+.about__section__content#personal-life .p3 {
+  max-width: calc((3 * var(--column)) + (2 * var(--gutter)));
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.about section#all {
+  display: grid;
+  grid-template-columns: auto var(--column);
+  column-gap: var(--gutter);
+  align-items: flex-end;
+  margin-top: 156px;
+}
+
+.about h2 {
+  font-family: var(--font-heading);
+  text-transform: none;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+@media (min-width: 768px) {
+  .about__intro__image {
+    height: 37.6rem;
+    top: 19rem;
+    max-height: none;
+  }
+
+  .about__intro h1 {
+    position: relative;
+    margin-bottom: 40rem;
+    z-index: 1;
+  }
+
+  .about section#all .scroll-top {
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1025px) {
+  .about {
+    padding: 133px var(--horizontal-padding) 35px;
+  }
+
+  .about__intro {
+    margin-bottom: 94px;
+  }
+
+  .about__intro__image {
+    width: calc((6 * var(--column)) + (5 * var(--gutter)));
+    height: 80.5rem;
+    max-height: 805px;
+    top: 160px;
+  }
+
+  .about__intro h1 {
+    width: calc(var(--full-column) * 9);
+    margin-bottom: 0;
+  }
+
+  .about__intro > .p1 {
+    margin-top: 64px;
+    width: calc(var(--column) * 6 + var(--gutter) * 5);
+  }
+
+  .about__intro__bottom {
+    margin-top: 52px;
+    width: calc(var(--column) * 6 + var(--gutter) * 5);
+  }
+
+  .about__section {
+    display: grid;
+    grid-template-columns: calc(var(--column) * 2 + var(--gutter)) calc(
+        (var(--column) * 10) + (var(--gutter) * 9)
+      );
+    column-gap: var(--gutter);
+    border: none !important;
+    margin-top: 0 !important;
+  }
+
+  .about__section__title {
+    height: min-content;
+    border: none;
+    background-color: transparent;
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+
+  .about__section__content {
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .about__section__title + .about__section__content {
+    margin-top: 0;
+  }
+
+  .about__section:not(.about__section--bold)
+    + .about__section:not(.about__section--bold)
+    .about__section__content {
+    border-top: 1px dotted var(--grey);
+  }
+
+  .about__section--bold .about__section__content {
+    padding: 20px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .about__section--bold .about__section__title + .about__section__content {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .about__section__content--3 {
+    display: grid;
+    grid-template-columns: repeat(
+      3,
+      calc((var(--column) * 3) + (var(--gutter) * 2))
+    );
+    column-gap: var(--gutter);
+  }
+
+  .about__section__content--2 {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      calc((5 * var(--column)) + (4 * var(--gutter)))
+    );
+    column-gap: var(--gutter);
+  }
+
+  .about__section__content--2 img {
+    height: 44.7rem;
+  }
+
+  .about__section__content#personal-life {
+    display: grid;
+    grid-template-columns:
+      calc((5 * var(--column)) + (4 * var(--gutter))) calc(
+        (2 * var(--column)) + (1 * var(--gutter))
+      )
+      calc((2 * var(--column)) + (1 * var(--gutter)));
+
+    column-gap: var(--gutter);
+  }
+
+  .about__section__content#personal-life .p3 {
+    max-width: 100%;
+  }
+
+  .about__section__content > div + div {
+    margin-top: 0;
+  }
+
+  .about__section__content .p1 + .p3 {
+    margin-top: 0;
+  }
+
+  .about__section__content .p3 + .p3 {
+    margin-top: 0 !important;
+  }
+
+  .about__section__content__heading {
+    margin-bottom: 32px;
+  }
+
+  .about__section__content__body + .about__section__content__heading,
+  .separator + .about__section__content__heading {
+    margin-top: 40px;
+  }
+
+  .about h2 {
+    font-size: 15rem;
+    line-height: 15rem;
+  }
+
+  .about section#all {
+    margin-top: 52px;
+    align-items: baseline;
+  }
+}

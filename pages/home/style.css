@@ -1,0 +1,222 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.loaded .home {
+  pointer-events: initial;
+}
+
+.home__separator {
+  display: none;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #717171 0px,
+    #717171 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0;
+  will-change: transform;
+  transition: transform 0.8s var(--transition-ease--out-quint),
+    opacity 0.8s var(--transition-ease--out-quint);
+  transform: translateX(0);
+  z-index: 999;
+}
+
+body.loaded .home__separator {
+  opacity: 1;
+}
+
+.home__focus--left .home__separator {
+  transform: translateX(8px);
+}
+
+.home__focus--right .home__separator {
+  transform: translateX(-8px);
+}
+
+.home__separator::before,
+.home__separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  will-change: opacity;
+  transition: opacity 0.8s var(--transition-ease--out-quint);
+  opacity: 1;
+}
+
+.home__separator::before {
+  left: 10px;
+  background-image: url(/assets/icons/left-arrow.svg);
+}
+
+.home__focus--left .home__separator::before {
+  opacity: 0;
+}
+
+.home__separator::after {
+  right: 10px;
+  background-image: url(/assets/icons/right-arrow.svg);
+}
+
+.home__focus--right .home__separator::after {
+  opacity: 0;
+}
+
+.home__container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.home__container__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 1s linear infinite alternate;
+}
+
+.home__container--director .home__container__content {
+  animation-direction: alternate-reverse;
+}
+
+.home__focus--left .home__container__content,
+.home__focus--right .home__container__content {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.home__container__content__image-wrapper {
+  width: 24.7rem;
+  height: 14.4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  will-change: transform, opacity;
+  transition: 0.8s var(--transition-ease--out-quint);
+  transition-property: transform, opacity;
+  transform: scale(1);
+  opacity: 0;
+}
+
+body.loaded .home__container__content__image-wrapper {
+  opacity: 1;
+}
+
+.home__container--director .home__container__content__image-wrapper {
+  background-image: url(/assets/icons/R+S_text.svg);
+}
+
+.home__container--illustrator .home__container__content__image-wrapper {
+  background-image: url(/assets/icons/illustrator.svg);
+}
+
+.home__container__content__bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 24px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  z-index: 997;
+  mix-blend-mode: difference;
+}
+
+.home__container__content__bottom p:last-child {
+  text-align: right;
+}
+
+@media (min-width: 1025px) {
+  .home {
+    flex-direction: row;
+  }
+
+  .home__separator {
+    display: block;
+  }
+
+  .home__container {
+    width: 50%;
+  }
+
+  .home__container__content {
+    animation: none;
+  }
+
+  .home__container__content__bottom {
+    display: flex;
+  }
+
+  .home__container__content__image-wrapper {
+    height: 23rem;
+    width: 32vw;
+  }
+
+  .home__focus--left
+    .home__container--director
+    .home__container__content__image-wrapper {
+    /*transform: scale(1.1222707424);*/
+    transform: scale(1.13);
+  }
+
+  .home__focus--right
+    .home__container--director
+    .home__container__content__image-wrapper {
+    transform: scale(0.8427947598);
+    opacity: 0.4;
+    filter: blur(4px);
+  }
+
+  .home__focus--right
+    .home__container--illustrator
+    .home__container__content__image-wrapper {
+    /*transform: scale(1.1222707424);*/
+    transform: scale(1.13);
+  }
+
+  .home__focus--left
+    .home__container--illustrator
+    .home__container__content__image-wrapper {
+    transform: scale(0.8427947598);
+    opacity: 0.4;
+    filter: blur(4px);
+  }
+}

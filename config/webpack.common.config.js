@@ -1,23 +1,41 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 const path = require("path");
 
 const babelConfigPath = path.join(__dirname, "babel.config.js");
 const rootPath = path.resolve(__dirname, "..");
 const distPath = path.join(rootPath, "dist");
 
+const pages = require("./pages.js");
+
 module.exports = {
   entry: path.resolve(rootPath, "/index.js"),
   output: {
     path: distPath,
-    filename: "[name].js",
+    filename: "[name].[contenthash].js",
+    clean: true,
+    publicPath: "/",
   },
+  devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
+      filename: `index.html`,
       template: path.resolve(rootPath, "/index.html"),
     }),
+    ...pages,
     new CopyWebpackPlugin({
-      patterns: [{ from: path.resolve(rootPath, "assets") }],
+      patterns: [
+        "sw.js",
+        {
+          from: path.resolve(rootPath, "assets/icons/icon-192.png"),
+          to: path.resolve(rootPath, "dist/assets/icons/icon-192.png"),
+        },
+        {
+          from: path.resolve(rootPath, "assets/icons/icon-512.png"),
+          to: path.resolve(rootPath, "dist/assets/icons/icon-512.png"),
+        },
+      ],
     }),
   ],
   module: {
@@ -39,7 +57,10 @@ module.exports = {
       },
       {
         test: /\.(svg|woff2?|png|jpe?g|gif)$/i,
-        use: "file-loader",
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[contenthash].[ext]",
+        },
       },
     ],
   },
@@ -51,7 +72,14 @@ module.exports = {
       "@components": path.resolve(rootPath, "components"),
       "@styles": path.resolve(rootPath, "styles"),
       "@utils": path.resolve(rootPath, "utils"),
+      "@pages": path.resolve(rootPath, "pages"),
+      "@router": path.resolve(rootPath, "router"),
+      "@data": path.resolve(rootPath, "data"),
+      "@models": path.resolve(rootPath, "models"),
     },
   },
   stats: "errors-warnings",
+  stats: {
+    children: false,
+  },
 };

@@ -1,0 +1,32 @@
+.illustratore {
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--dvh, 1vh) * 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.illustratore__image-wrapper {
+  height: 16.791rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustratore__image-wrapper svg {
+  height: 24.391rem;
+  width: auto;
+}
+
+@media (min-width: 1025px) {
+  .illustratore__image-wrapper {
+    height: 28.607rem;
+  }
+
+  .illustratore__image-wrapper svg {
+    height: 41.553rem;
+  }
+}
