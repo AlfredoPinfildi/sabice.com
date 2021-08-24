@@ -1,0 +1,1 @@
+const CACHE_NAME="sabice-cache",offlineUrl=["/offline/index.html"];self.addEventListener("install",(function(e){e.waitUntil(caches.open(CACHE_NAME).then((function(e){return console.log("Opened cache"),e.addAll(offlineUrl)})))})),self.addEventListener("fetch",(e=>{e.respondWith(fetch(e.request).catch((e=>(console.log("error---\x3e>",e),caches.match(offlineUrl)))))}));
