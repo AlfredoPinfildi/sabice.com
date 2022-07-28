@@ -13,7 +13,7 @@ module.exports = {
   entry: path.resolve(rootPath, "/index.js"),
   output: {
     path: distPath,
-    filename: "[name].[contenthash].js",
+    filename: "[name].js",
     clean: true,
     publicPath: "/",
   },
@@ -59,7 +59,7 @@ module.exports = {
         test: /\.(svg|woff2?|png|jpe?g|gif)$/i,
         loader: "file-loader",
         options: {
-          name: "[path][name].[contenthash].[ext]",
+          name: "[path][name].[ext]",
         },
       },
     ],

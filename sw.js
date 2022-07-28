@@ -1,4 +1,4 @@
-const CACHE_NAME = "sabice-cache";
+const CACHE_NAME = "koko-cache";
 const offlineUrl = ["/offline/index.html"];
 
 self.addEventListener("install", function (event) {

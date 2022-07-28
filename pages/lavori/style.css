@@ -87,21 +87,6 @@
   display: none;
 }
 
-.cane {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: var(--test);
-  left: 0;
-  background-color: red;
-  display: none;
-  pointer-events: none;
-}
-
-.lavori__lista ul li:first-child .cane {
-  display: block;
-}
-
 .lavori--focusing
   .lavori__lista
   > ul
